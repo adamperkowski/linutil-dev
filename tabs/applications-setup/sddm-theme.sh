@@ -6,16 +6,16 @@ install_sddm() {
     printf "%b\n" "${YELLOW}Installing SDDM...${RC}"
     case $PACKAGER in
         apt-get)
-            $ESCALATION_TOOL apt-get install -y sddm qt6-svg
+            $ESCALATION_TOOL "$PACKAGER" install -y sddm qt6-svg
             ;;
         zypper)
-            $ESCALATION_TOOL zypper --non-interactive install sddm qt6-qtsvg
+            $ESCALATION_TOOL "$PACKAGER" --non-interactive install sddm qt6-qtsvg
             ;;
         dnf)
-            $ESCALATION_TOOL dnf install -y sddm qt6-qtsvg
+            $ESCALATION_TOOL "$PACKAGER" install -y sddm qt6-qtsvg
             ;;
         pacman)
-            $ESCALATION_TOOL pacman -S --needed --noconfirm sddm qt6-svg
+            $ESCALATION_TOOL "$PACKAGER" -S --needed --noconfirm sddm qt6-svg
             ;;
         *)
             printf "%b\n" "${RED}Unsupported package manager. Please install SDDM manually.${RC}"
