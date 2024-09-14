@@ -3,7 +3,7 @@
 . ../common-script.sh
 
 install_sddm() {
-    printf "${YELLOW}Installing SDDM...${RC}\n"
+    printf "${YELLOW}Installing SDDM...${RC}"
     case $PACKAGER in
         apt-get)
             $ESCALATION_TOOL apt-get update
