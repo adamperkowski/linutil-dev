@@ -105,7 +105,7 @@ fi
 install_theme
 
 read -r -p "Do you want to enable autologin? (y/n): " enable_autologin
-if [[ $enable_autologin =~ ^[Yy]$ ]]; then
+if [ "$enable_autologin" = "y" ] || [ "$enable_autologin" = "Y" ]; then
     configure_autologin
 else
     echo "Autologin not configured."
