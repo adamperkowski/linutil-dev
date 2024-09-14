@@ -6,15 +6,12 @@ install_sddm() {
     printf "${YELLOW}Installing SDDM...${RC}"
     case $PACKAGER in
         apt-get)
-            $ESCALATION_TOOL apt-get update
             $ESCALATION_TOOL apt-get install -y sddm qt6-svg
             ;;
         zypper)
-            $ESCALATION_TOOL zypper refresh
             $ESCALATION_TOOL zypper --non-interactive install sddm qt6-qtsvg
             ;;
         dnf)
-            $ESCALATION_TOOL dnf update
             $ESCALATION_TOOL dnf install -y sddm qt6-qtsvg
             ;;
         pacman)
