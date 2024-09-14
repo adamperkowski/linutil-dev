@@ -96,7 +96,7 @@ checkEnv
 checkEscalationTool
 
 # Check if SDDM is already installed
-if ! command -v sddm &> /dev/null; then
+if ! command -v sddm > /dev/null 2>&1; then
     install_sddm
 else
     echo "SDDM is already installed. Skipping installation."
