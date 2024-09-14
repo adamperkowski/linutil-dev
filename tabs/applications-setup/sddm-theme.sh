@@ -5,19 +5,28 @@
 USERNAME=$(whoami)
 
 install_sddm() {
-    echo "Installing SDDM if not already installed..."
-    if ! command_exists sddm; then
-        case ${PACKAGER} in
-            pacman)
-                $ESCALATION_TOOL ${PACKAGER} -S --needed --noconfirm sddm qt6-svg
-                ;;
-            *)
-                $ESCALATION_TOOL ${PACKAGER} install -y sddm qt6-svg
-                ;;
-        esac
-    else
-        echo "SDDM is already installed."
-    fi
+    printf "${YELLOW}Installing SDDM...${RC}\n"
+    case $PACKAGER in
+        apt-get)
+            $ESCALATION_TOOL apt-get update
+            $ESCALATION_TOOL apt-get install -y sddm qt6-svg
+            ;;
+        zypper)
+            $ESCALATION_TOOL zypper refresh
+            $ESCALATION_TOOL zypper --non-interactive install sddm qt6-qtsvg
+            ;;
+        dnf)
+            $ESCALATION_TOOL dnf update
+            $ESCALATION_TOOL dnf install -y sddm qt6-qtsvg
+            ;;
+        pacman)
+            $ESCALATION_TOOL pacman -S --needed --noconfirm sddm qt6-svg
+            ;;
+        *)
+            printf "${RED}Unsupported package manager. Please install SDDM manually.${RC}\n"
+            exit 1
+            ;;
+    esac
 }
 
 install_theme() {
