@@ -5,7 +5,7 @@
 USERNAME=$(whoami)
 
 install_sddm() {
-    printf "${YELLOW}Installing SDDM login manager...${RC}\n"
+    printf "%b\n" "${YELLOW}Installing SDDM login manager...${RC}"
     case $PACKAGER in
         apt-get)
             $ESCALATION_TOOL apt-get update
