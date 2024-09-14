@@ -2,8 +2,6 @@
 
 . ../common-script.sh
 
-USERNAME=$(whoami)
-
 install_sddm() {
     printf "${YELLOW}Installing SDDM...${RC}\n"
     case $PACKAGER in
