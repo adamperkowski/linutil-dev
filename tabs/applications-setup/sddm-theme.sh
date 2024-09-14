@@ -3,7 +3,7 @@
 . ../common-script.sh
 
 install_sddm() {
-    printf "${YELLOW}Installing SDDM...${RC}"
+    printf "%b\n" "${YELLOW}Installing SDDM...${RC}"
     case $PACKAGER in
         apt-get)
             $ESCALATION_TOOL apt-get install -y sddm qt6-svg
