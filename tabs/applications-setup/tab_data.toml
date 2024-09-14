@@ -25,7 +25,7 @@ name = "Rofi"
 script = "rofi-setup.sh"
 
 [[data]]
-name = "SDDM Theme"
+name = "SDDM"
 script = "sddm-setup.sh"
 
 [[data]]
