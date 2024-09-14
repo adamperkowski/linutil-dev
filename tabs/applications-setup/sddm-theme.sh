@@ -85,7 +85,7 @@ configure_autologin() {
     # Find the corresponding .desktop file and Update SDDM configuration
     actual_session=$(basename "$session_file" .desktop)
 
-    $ESCALATION_TOOL sed -i '1i[Autologin]\nUser = '"$USERNAME"'\nSession = '"$actual_session"'\n' /etc/sddm.conf
+    $ESCALATION_TOOL sed -i '1i[Autologin]\nUser = '"$USER"'\nSession = '"$actual_session"'\n' /etc/sddm.conf
     echo "Autologin configuration complete."
 
     $ESCALATION_TOOL systemctl restart sddm
