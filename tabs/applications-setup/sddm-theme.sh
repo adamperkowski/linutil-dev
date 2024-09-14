@@ -18,7 +18,7 @@ install_sddm() {
             $ESCALATION_TOOL pacman -S --needed --noconfirm sddm qt6-svg
             ;;
         *)
-            printf "${RED}Unsupported package manager. Please install SDDM manually.${RC}"
+            printf "%b\n" "${RED}Unsupported package manager. Please install SDDM manually.${RC}"
             exit 1
             ;;
     esac
