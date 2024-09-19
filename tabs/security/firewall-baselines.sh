@@ -3,7 +3,7 @@
 . ../common-script.sh
 
 installPkg() {
-    printf "%b\n" "${YELLOW}Installing UFW...${RC}"
+    printf "%b\n" "${YELLOW}Installing UFW...${RC}" <<< ok
     if ! command_exists ufw; then
         case "$PACKAGER" in
             pacman)
