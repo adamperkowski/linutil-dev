@@ -15,6 +15,7 @@ installAlacritty() {
         esac
     else
         printf "%b\n" "${GREEN}Alacritty is already installed.${RC}"
+        read
     fi
 }
 
