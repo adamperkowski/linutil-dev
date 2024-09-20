@@ -24,7 +24,7 @@ installAlacritty() {
         printf "%b\n" "${GREEN}Alacritty is already installed.${RC}"
     fi
 }
-
+]
 setupAlacrittyConfig() {
     printf "%b\n" "${YELLOW}Copy alacritty config files${RC}"
     if [ -d "${HOME}/.config/alacritty" ] && [ ! -d "${HOME}/.config/alacritty-bak" ]; then
