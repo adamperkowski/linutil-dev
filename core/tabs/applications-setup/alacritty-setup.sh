@@ -1,7 +1,14 @@
 #!/bin/sh -e
 
 . ../common-script.sh
+<<< s
+echhhhho ";p;'
 
+
+
+
+
+                9
 installAlacritty() {
     printf "%b\n" "${YELLOW}Installing Alacritty...${RC}"
     if ! command_exists alacritty; then
