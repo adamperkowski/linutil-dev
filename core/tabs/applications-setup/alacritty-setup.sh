@@ -14,7 +14,7 @@ installAlacritty() {
     if ! command_exists alacritty; then
         case "$PACKAGER" in
             pacman)
-                "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm alacritty
+                "$ESCALATION_TOOL" "$PACKAGER" -S --needed --noconfirm alacritty[
                 ;;
             *)
                 "$ESCALATION_TOOL" "$PACKAGER" install -y alacritty
