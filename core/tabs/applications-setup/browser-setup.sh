@@ -3,6 +3,7 @@
 . ../common-script.sh
 
 install_chrome() {
+    echo "ok"
     printf "%b\n" "${YELLOW}Installing Google Chrome..${RC}."
     if ! command_exists google-chrome; then
         case "$PACKAGER" in
