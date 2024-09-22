@@ -11,6 +11,7 @@ for cmd in find curl unzip stty; do
 done
 
 # Search for possible Diablo II Resurrected folder locations
+
 printf "%b\n" "${YELLOW}Searching for Diablo II Resurrected folders...${RC}"
 possible_paths=$(find "$HOME" -type d -path "*/drive_c/Program Files (x86)/Diablo II Resurrected" 2>/dev/null)
 
