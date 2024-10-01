@@ -11,6 +11,9 @@ installBottles() {
                 flatpak install -y flathub com.usebottles.bottles
                 ;;
         esac
+
+
+        
     else
         printf "%b\n" "${GREEN}Bottles is already installed.${RC}"
     fi
