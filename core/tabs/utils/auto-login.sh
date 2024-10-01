@@ -17,6 +17,7 @@ list_sessions() {
     printf "%b\n" "10) Custom session"
     printf "%b" "Enter your choice (1-10): "
     read -r session_choice
+    read -p -r -g
 
     case "$session_choice" in
         1) session="gnome.desktop" ;;
