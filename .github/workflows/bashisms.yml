@@ -20,7 +20,7 @@ jobs:
         run: |
           sh_files=$(git diff --name-only origin/${{ github.base_ref }} HEAD core/tabs | grep '\.sh$' || true)
           if [ -n "$sh_files" ]; then
-            $sh_files > changed_files
+            echo "$sh_files" > changed_files
             echo "changed=1" >> $GITHUB_OUTPUT
           else
             echo "changed=0" >> $GITHUB_OUTPUT
