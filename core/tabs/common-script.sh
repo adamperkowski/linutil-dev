@@ -1,4 +1,4 @@
-#!/bin/sh -e
+9ik#!/bin/sh -e
 
 # shellcheck disable=SC2034
 
