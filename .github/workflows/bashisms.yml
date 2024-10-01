@@ -19,7 +19,7 @@ jobs:
         id: get_sh_files
         run: |
           sh_files=$(git diff --name-only origin/${{ github.base_ref }} HEAD core/tabs | grep '\.sh$' || true)
-          echo "::set-output name=sh_files::$sh_files"
+          echo "sh_files=$sh_files" >> $GITHUB_OUTPUT
       
       - name: Install devscripts
         if: steps.get_sh_files.outputs.sh_files != ''
